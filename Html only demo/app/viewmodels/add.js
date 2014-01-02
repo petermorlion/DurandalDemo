@@ -1,9 +1,9 @@
 define(['knockout', 'models/Beer', 'plugins/router'], function (ko, Beer, router) {
-    return {
-        displayName: 'Add Beer',
-        name: ko.observable(''),
-        brewery: ko.observable(''),
-        save: function () {
+    return function AddViewModel() {
+        this.displayName = 'Add Beer';
+        this.name = ko.observable(''),
+        this.brewery = ko.observable(''),
+        this.save = function () {
             var beer = new Beer(this.name(), this.brewery());
 
             if (!localStorage.beers) {
@@ -18,8 +18,6 @@ define(['knockout', 'models/Beer', 'plugins/router'], function (ko, Beer, router
                 localStorage.beers = JSON.stringify(beers);
             }
 
-            this.name('');
-            this.brewery('');
             router.navigate('#beers');
         }
     }

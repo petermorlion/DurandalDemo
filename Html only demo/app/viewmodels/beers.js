@@ -1,13 +1,19 @@
 define(['knockout', 'bootstrap'], function (ko) {
-    var existingBeers = [];
-
-    if (localStorage.beers) {
-        existingBeers = JSON.parse(localStorage.beers).items;
-    }
-
     return function beersViewModel() {
         this.displayName = 'Beers';
-        this.items = ko.observableArray(existingBeers);
+        
+        this.getBeers = function () {
+            var existingBeers = [];
+
+            if (localStorage.beers) {
+                existingBeers = JSON.parse(localStorage.beers).items;
+            }
+
+            return existingBeers;
+        };
+
+        this.items = ko.observableArray(this.getBeers());
+
         this.itemsGrouped = ko.computed(function () {
             var rows = [], current = [];
             rows.push(current);
