@@ -1,4 +1,16 @@
 <section>
     <h2 data-bind="html: displayName"></h2>
     <a href="/#add">Add</a>
+    <div class="row-fluid">
+        <ul class="thumbnails" data-bind="foreach: items">
+            <li>
+                <div>
+                    <h3 data-bind="text: name"></h3>
+                    <div>
+                        <small>Brewery: <span data-bind="text: brewery"></span></small>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
 </section>

@@ -1,6 +1,6 @@
 define(['knockout', 'models/Beer', 'plugins/router'], function (ko, Beer, router) {
     return {
-        displayName: 'Add',
+        displayName: 'Add Beer',
         name: ko.observable(''),
         brewery: ko.observable(''),
         save: function () {
@@ -18,6 +18,8 @@ define(['knockout', 'models/Beer', 'plugins/router'], function (ko, Beer, router
                 localStorage.beers = JSON.stringify(beers);
             }
 
+            this.name('');
+            this.brewery('');
             router.navigate('#beers');
         }
     }
