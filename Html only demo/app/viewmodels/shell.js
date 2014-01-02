@@ -9,7 +9,9 @@
         activate: function () {
             router.map([
                 { route: '', title:'Welcome', moduleId: 'viewmodels/welcome', nav: true },
-                { route: 'flickr', moduleId: 'viewmodels/flickr', nav: true }
+                { route: 'flickr', moduleId: 'viewmodels/flickr', nav: true },
+                { route: 'beers', moduleId: 'viewmodels/beers', nav: true },
+                { route: 'add', moduleId: 'viewmodels/add', nav: false }
             ]).buildNavigationModel();
             
             return router.activate();
