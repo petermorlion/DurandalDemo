@@ -4,7 +4,7 @@
     <div class="row-fluid">
         <ul class="thumbnails" data-bind="foreach: items">
             <li>
-                <a class="beer-summary">
+                <a class="beer-summary" data-bind="attr: { href : '#beer/' + beerId }">
                     <h3 data-bind="text: name"></h3>
                     <div>
                         <small>Brewery: <span data-bind="text: brewery"></span></small>
