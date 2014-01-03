@@ -1,4 +1,4 @@
-define(['knockout', 'models/Beer', 'plugins/router'], function (ko, Beer, router) {
+define(['knockout', 'models/beer', 'plugins/router'], function (ko, Beer, router) {
     return function AddViewModel() {
         this.displayName = 'Add Beer';
         this.name = ko.observable(''),
