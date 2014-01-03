@@ -11,7 +11,8 @@
                 { route: '', title:'Welcome', moduleId: 'viewmodels/welcome', nav: true },
                 { route: 'flickr', moduleId: 'viewmodels/flickr', nav: true },
                 { route: 'beers', moduleId: 'viewmodels/beers', nav: true },
-                { route: 'add', moduleId: 'viewmodels/add', nav: false }
+                { route: 'add', moduleId: 'viewmodels/add', nav: false },
+                { route: 'beer/:id', moduleId: 'viewmodels/beer', nav: false }
             ]).buildNavigationModel();
             
             return router.activate();
