@@ -22,8 +22,7 @@ define([], function () {
 
             var beers = JSON.parse(localStorage.beers);
             for (i = 0; i < beers.items.length; i++) {
-                // Everything from localStorage is a string, so we use ==
-                if (beers.items[i].beerId == id) {
+                if (beers.items[i].beerId === id.toString()) {
                     return beers.items[i];
                 }
             }
