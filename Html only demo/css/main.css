@@ -8,4 +8,19 @@
     width:  200px;
     height: 150px;
     padding:  5px;
+    color: grey;
+}
+
+.beer-summary:hover {
+    text-decoration: none;
+    color: grey;
+}
+
+.beer-delete {
+    text-align: right;
+    color: #CC3333;
+}
+
+.beer-delete:hover {
+    color: #FF2222;
 }
