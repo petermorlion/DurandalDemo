@@ -1,8 +1,9 @@
-define(['knockout', 'bootstrap'], function (ko) {
+define(['knockout', 'models/beerRepository'], function (ko, beerRepository) {
     return function beersViewModel() {
-        this.displayName = 'Beers';
+        self = this;
+        self.displayName = 'Beers';
         
-        this.getBeers = function () {
+        self.getBeers = function () {
             var existingBeers = [];
 
             if (localStorage.beers) {
@@ -12,19 +13,11 @@ define(['knockout', 'bootstrap'], function (ko) {
             return existingBeers;
         };
 
-        this.items = ko.observableArray(this.getBeers());
+        self.items = ko.observableArray(self.getBeers());
 
-        this.itemsGrouped = ko.computed(function () {
-            var rows = [], current = [];
-            rows.push(current);
-            for (var i = 0; i < this.items().length; i += 1) {
-                current.push(this.items()[i]);
-                if (((i + 1) % 4) === 0) {
-                    current = [];
-                    rows.push(current);
-                }
-            }
-            return rows;
-        }, this);
+        self.delete = function () {
+            beerRepository.delete(this.beerId);
+            self.items.remove(this);
+        };
     }
 });

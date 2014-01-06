@@ -4,15 +4,15 @@
     <div class="row-fluid">
         <ul class="thumbnails" data-bind="foreach: items">
             <li>
-                <a class="beer-summary" data-bind="attr: { href : '#beer/' + beerId }">
-                    <h3 data-bind="text: name"></h3>
+                <div class="beer-summary">
+                    <a data-bind="attr: { href : '#beer/' + beerId }"><h3 data-bind="text: name"></h3></a>
                     <div>
                         <small>Brewery: <span data-bind="text: brewery"></span></small>
                     </div>
-                    <div class="beer-delete">
+                    <span class="beer-delete" data-bind="click: $parent.delete">
                         <span class="fa fa-times"></span> Delete
-                    </div>
-                </a>
+                    </span>
+                </div>
             </li>
         </ul>
     </div>

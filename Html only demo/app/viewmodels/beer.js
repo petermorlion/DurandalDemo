@@ -2,6 +2,7 @@ define(['models/beerRepository'], function (beerRepository) {
     return function beerViewModel() {
         // TODO: is it possible to pass an object to the viewmodel?
         this.activate = function (id) {
+            id = parseInt(id);
             var beer = beerRepository.get(id);
             if (beer) {
                 this.displayName = beer.name;

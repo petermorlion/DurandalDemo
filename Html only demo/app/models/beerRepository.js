@@ -15,6 +15,7 @@ define([], function () {
                 localStorage.beers = JSON.stringify(beers);
             }
         },
+
         get: function (id) {
             if (!localStorage.beers) {
                 return null;
@@ -22,12 +23,27 @@ define([], function () {
 
             var beers = JSON.parse(localStorage.beers);
             for (i = 0; i < beers.items.length; i++) {
-                if (beers.items[i].beerId === id.toString()) {
+                if (beers.items[i].beerId === id) {
                     return beers.items[i];
                 }
             }
 
             return null;
+        },
+
+        delete: function (id) {
+            if (!localStorage.beers) {
+                return;
+            }
+
+            var beers = JSON.parse(localStorage.beers);
+            for (i = 0; i < beers.items.length; i++) {
+                if (beers.items[i].beerId === id) {
+                    beers.items = beers.items.length > 1 ? beers.items.splice(i, 1) : [];
+                    localStorage.beers = JSON.stringify(beers);
+                    return;
+                }
+            }
         }
     };
 });
