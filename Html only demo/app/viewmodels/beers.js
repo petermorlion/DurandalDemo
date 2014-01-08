@@ -1,4 +1,4 @@
-define(['knockout', 'models/beerRepository'], function (ko, beerRepository) {
+define(['knockout', 'models/beerRepository', 'jquery'], function (ko, beerRepository, $) {
     return function beersViewModel() {
         self = this;
         self.displayName = 'Beers';
@@ -19,5 +19,11 @@ define(['knockout', 'models/beerRepository'], function (ko, beerRepository) {
             beerRepository.delete(this.beerId);
             self.items.remove(this);
         };
+
+        self.shrink = function (element, index, data) {
+            $(element)
+                .filter('*')
+                .animate({ width: 0 }, 400, 'swing', function () { $(this).hide() });
+        }
     }
 });

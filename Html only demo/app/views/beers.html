@@ -2,7 +2,7 @@
     <h2 data-bind="html: displayName"></h2>
     <a href="#add">Add</a>
     <div class="row-fluid">
-        <ul class="thumbnails" data-bind="foreach: items">
+        <ul class="thumbnails" data-bind="foreach: { data: items, beforeRemove: shrink }">
             <li>
                 <div class="beer-summary">
                     <a data-bind="attr: { href : '#beer/' + beerId }"><h3 data-bind="text: name"></h3></a>
