@@ -39,11 +39,12 @@ define([], function () {
             var beers = JSON.parse(localStorage.beers);
             for (i = 0; i < beers.items.length; i++) {
                 if (beers.items[i].beerId === id) {
-                    beers.items = beers.items.length > 1 ? beers.items.splice(i, 1) : [];
-                    localStorage.beers = JSON.stringify(beers);
-                    return;
+                    beers.items.splice(i, 1);
                 }
             }
+
+            localStorage.beers = JSON.stringify(beers);
+            return;
         }
     };
 });
