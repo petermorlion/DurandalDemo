@@ -1,14 +1,14 @@
 ﻿define(['durandal/app', 'plugins/router', 'knockout'], function (app, router, ko) {
-    return function settingsViewModel() {
-        var self = this;
-        self.displayName = "Settings";
-        self.name = ko.observable('');
-        self.save = function () {
+    // returns an object --> a singleton; Durandal will not make multiple instances of it.
+    return {
+        displayName: "Settings",
+        name: ko.observable(''),
+        save: function () {
             if (localStorage) {
-                localStorage.name = self.name();
+                localStorage.profile = { name: self.name() };
             }
 
             app.showMessage('Saved!');
-        };
+        }
     };
 });
