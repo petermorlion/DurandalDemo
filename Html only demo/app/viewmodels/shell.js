@@ -8,7 +8,8 @@
         },
         activate: function () {
             router.map([
-                { route: '', title:'Beers', moduleId: 'viewmodels/beers', nav: true },
+                { route: '', title: 'Home', moduleId: 'viewmodels/home', nav: true },
+                { route: 'beers', title: 'Beers', moduleId: 'viewmodels/beers', nav: true },
                 { route: 'add', moduleId: 'viewmodels/add', nav: false },
                 { route: 'beer/:id', moduleId: 'viewmodels/beer', nav: false }
             ]).buildNavigationModel();
