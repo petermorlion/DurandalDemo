@@ -7,7 +7,14 @@
                 return true;
             }
 
-            return localStorage.profile != undefined && localStorage.profile.name !== '';
+            return localStorage.profile != undefined && JSON.parse(localStorage.profile).name !== '';
+        });
+        self.name = ko.computed(function () {
+            if (self.isProfileComplete()) {
+                return JSON.parse(localStorage.profile).name;
+            }
+
+            return '';
         });
     };
 })

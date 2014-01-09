@@ -1,7 +1,7 @@
 ﻿<section>
     <h2 data-bind="text: displayName"></h2>
     <div>
-        Welcome to the Team4Talent Beer o'clock Durandal demo app!
+        Hi <span data-bind="if: isProfileComplete, text: name"></span> and welcome to the Team4Talent Beer o'clock Durandal demo app!
     </div>
     <div data-bind="visible: !isProfileComplete()">
         Your profile seems incomplete. How about you <a href="#settings">tell us more about yourself</a>?
