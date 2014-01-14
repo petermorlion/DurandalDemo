@@ -4,15 +4,7 @@
     <div class="row-fluid">
         <ul class="thumbnails" data-bind="foreach: { data: items, beforeRemove: shrink }">
             <li>
-                <div class="beer-summary">
-                    <a data-bind="attr: { href : '#beer/' + beerId }"><h3 data-bind="text: name"></h3></a>
-                    <div>
-                        <small>Brewery: <span data-bind="text: brewery"></span></small>
-                    </div>
-                    <span class="beer-delete" data-bind="click: $parent.delete">
-                        <span class="fa fa-times"></span> Delete
-                    </span>
-                </div>
+                <div data-bind="compose: 'beer.html'"></div> <!-- binds the current context to the beer.html view -->
             </li>
         </ul>
     </div>

@@ -1,4 +1,9 @@
-<section>
-    <h2 data-bind="html: displayName"></h2>
-    <small>By <span data-bind="text: brewery"></span></small>
-</section>
+<div class="beer-summary">
+    <a data-bind="attr: { href : '#beer/' + beerId }"><h3 data-bind="text: name"></h3></a>
+    <div>
+        <small>Brewery: <span data-bind="text: brewery"></span></small>
+    </div>
+    <span class="beer-delete" data-bind="click: $parent.delete">
+        <span class="fa fa-times"></span> Delete
+    </span>
+</div>
