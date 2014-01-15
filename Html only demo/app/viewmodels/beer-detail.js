@@ -1,4 +1,4 @@
-﻿define(['models/beerRepository'], function (beerRepository) {
+﻿define(['models/beerRepository', 'plugins/router'], function (beerRepository, router) {
     return function beerDetailViewModel() {
         var self = this;
 
@@ -7,9 +7,15 @@
             id = parseInt(id);
             var beer = beerRepository.get(id);
             if (beer) {
+                self.beerId = beer.beerId;
                 self.displayName = beer.name;
                 self.brewery = beer.brewery;
             }
-        }
+        };
+
+        self.remove = function () {
+            beerRepository.delete(self.beerId);
+            router.navigate('#beers');
+        };
     };
 });

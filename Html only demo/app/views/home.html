@@ -6,4 +6,5 @@
     <div data-bind="visible: !isProfileComplete()">
         Your profile seems incomplete. How about you <a href="#settings">tell us more about yourself</a>?
     </div>
+    <div data-bind="compose: { view: 'views/beer-summary.html', model: randomBeer() }"></div>
 </section>

@@ -2,7 +2,7 @@
     <h2 data-bind="html: displayName"></h2>
     <a href="#add">Add</a>
     <div class="row-fluid">
-        <ul class="thumbnails" data-bind="foreach: { data: items, beforeRemove: shrink }">
+        <ul class="thumbnails" data-bind="foreach: { data: items }">
             <li>
                 <div data-bind="compose: 'beer-summary.html'"></div> <!-- binds the current context to the beer.html view -->
             </li>

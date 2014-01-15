@@ -19,16 +19,5 @@ define(['knockout', 'models/beerRepository', 'jquery', 'viewmodels/beer-summary'
         };
 
         self.items = ko.observableArray(self.getBeers());
-
-        self.delete = function () {
-            beerRepository.delete(this.beerId);
-            self.items.remove(this);
-        };
-
-        self.shrink = function (element, index, data) {
-            $(element)
-                .filter('*')
-                .animate({ width: 0 }, 400, 'swing', function () { $(this).hide() });
-        }
     }
 });
