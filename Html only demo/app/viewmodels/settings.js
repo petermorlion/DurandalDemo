@@ -4,7 +4,7 @@
 
         this.name = ko.observable('');
 
-        if (localStorage) {
+        if (localStorage && localStorage.profile) {
             this.name(JSON.parse(localStorage.profile).name);
         }
 
@@ -13,9 +13,10 @@
         this.save = function () {
             if (localStorage) {
                 localStorage.profile = JSON.stringify({ name: self.name() });
+                app.showMessage('Saved!');
+            } else {
+                app.showMessage('Your browser doesn\'t seem to support saving locally. Update your browser for more fun.');
             }
-
-            app.showMessage('Saved!');
         }
     };
 });

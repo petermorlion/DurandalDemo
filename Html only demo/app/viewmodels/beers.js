@@ -1,6 +1,6 @@
-define(['knockout', 'models/beerRepository', 'jquery'], function (ko, beerRepository, $) {
+define(['knockout', 'models/beerRepository', 'jquery', 'viewmodels/beer-summary'], function (ko, beerRepository, $, BeerSummary) {
     return function beersViewModel() {
-        self = this;
+        var self = this;
         self.displayName = 'Beers';
         
         self.getBeers = function () {
@@ -8,6 +8,11 @@ define(['knockout', 'models/beerRepository', 'jquery'], function (ko, beerReposi
 
             if (localStorage.beers) {
                 existingBeers = JSON.parse(localStorage.beers).items;
+            }
+
+            var result = [];
+            for (i = 0; i < existingBeers.length; i++) {
+                result.push(new BeerSummary(existingBeers[i]));
             }
 
             return existingBeers;
