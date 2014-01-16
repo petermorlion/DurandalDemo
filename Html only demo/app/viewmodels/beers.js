@@ -4,11 +4,7 @@ define(['knockout', 'models/beerRepository', 'jquery', 'viewmodels/beer-summary'
         self.displayName = 'Beers';
         
         self.getBeers = function () {
-            var existingBeers = [];
-
-            if (localStorage.beers) {
-                existingBeers = JSON.parse(localStorage.beers).items;
-            }
+            var existingBeers = beerRepository.find();
 
             var result = [];
             for (i = 0; i < existingBeers.length; i++) {

@@ -45,6 +45,16 @@ define([], function () {
 
             localStorage.beers = JSON.stringify(beers);
             return;
+        },
+
+        find: function () {
+            var beers = [];
+
+            if (localStorage.beers) {
+                beers = JSON.parse(localStorage.beers).items;
+            }
+
+            return beers;
         }
     };
 });
