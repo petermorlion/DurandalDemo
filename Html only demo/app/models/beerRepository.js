@@ -10,7 +10,14 @@ define([], function () {
                 localStorage.beers = JSON.stringify(beers);
             } else {
                 var beers = JSON.parse(localStorage.beers);
-                beer.beerId = beers.items.length + 1;
+                var highestId = 0;
+                for (var i = 0; i < beers.items.length; i++) {
+                    if (beers.items[i].beerId >= highestId) {
+                        highestId = beers.items[i].beerId + 1;
+                    }
+                }
+
+                beer.beerId = highestId;
                 beers.items.push(beer);
                 localStorage.beers = JSON.stringify(beers);
             }

@@ -8,6 +8,7 @@
         beerId: ko.observable(''),
         displayName: ko.observable(''),
         brewery: ko.observable(''),
+        comments: ko.observable(''),
         activate: function (id) {
             id = parseInt(id);
             var beer = beerRepository.get(id);
@@ -15,6 +16,7 @@
                 this.beerId(beer.beerId);
                 this.displayName(beer.name);
                 this.brewery(beer.brewery);
+                this.comments(beer.comments);
             }
         },
         remove: function () {
