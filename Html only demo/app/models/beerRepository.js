@@ -1,3 +1,5 @@
+// This is a crappy repository implementation and is not to be taken as a decent example (for example: we're constantly serializing/deserializing)
+// It's not important because it isn't central to the demo of Durandal
 define([], function () {
     return {
         save: function (beer) {
