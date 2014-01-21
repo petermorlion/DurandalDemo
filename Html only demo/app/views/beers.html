@@ -1,6 +1,12 @@
 <section>
     <h2 data-bind="html: displayName"></h2>
-    <a href="#add">Add</a>
+    <a href="#add">Add new beer</a>
+    <div>
+        Quick add: 
+        Name: <input data-bind="value: newBeerName" />
+        Brewery: <input data-bind="value: newBeerBrewery" />
+        <button data-bind="click: quickAdd">Add quickly!</button>
+    </div>
     <div class="row-fluid">
         <ul class="thumbnails" data-bind="foreach: { data: items }">
             <li>
