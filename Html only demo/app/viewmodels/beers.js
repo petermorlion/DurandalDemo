@@ -22,6 +22,14 @@ define(['knockout', 'models/beerRepository', 'jquery', 'viewmodels/beer-summary'
             var beer = new Beer(self.newBeerName(), self.newBeerBrewery(), '');
             beerRepository.save(beer);
             self.items.push(new BeerSummary(beer));
+            self.newBeerName('');
+            self.newBeerBrewery('');
+        };
+
+        self.glowGreen = function (element, index, data) {
+            $(element.nextSibling) // not sure if Durandal specific, but element is just a text node with li as nextSibling
+                .hide() // hide first so jQuery can fadeIn
+                .fadeIn();
         };
     }
 });
