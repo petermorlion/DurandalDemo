@@ -17,9 +17,20 @@
 }
 
 .beer-delete {
-    color: #CC3333;
+    color: #BB3333;
+    display: inline-block;
 }
 
 .beer-delete:hover {
     color: #FF2222;
+    cursor: pointer;
+}
+
+.quick-add {
+    border: 1px solid #808080;
+    -webkit-border-radius: 5px;
+       -moz-border-radius: 5px;
+            border-radius: 5px;
+    margin-bottom: 10px;
+    padding: 5px;
 }
