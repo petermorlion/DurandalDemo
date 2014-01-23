@@ -27,7 +27,12 @@ define(['knockout', 'models/beerRepository', 'jquery', 'viewmodels/beer-summary'
         };
 
         self.glowGreen = function (element, index, data) {
-            $(element.nextSibling) // not sure if Durandal specific, but element is just a text node with li as nextSibling
+            // afterAdd is called for each node that KO finds in the template. Whitespaces (text) included.
+            if (!element.tagName) {
+                return;
+            }
+
+            $(element)
                 .hide() // hide first so jQuery can fadeIn
                 .fadeIn();
         };
