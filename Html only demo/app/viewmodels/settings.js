@@ -1,4 +1,4 @@
-﻿define(['durandal/app', 'plugins/router', 'knockout'], function (app, router, ko) {
+﻿define(['durandal/app', 'plugins/router', 'knockout', 'customBindings/collapsibleSection'], function (app, router, ko) {
     return function settingsViewModel() {
         var self = this;
 
@@ -18,5 +18,7 @@
                 app.showMessage('Your browser doesn\'t seem to support saving locally. Update your browser for more fun.');
             }
         }
+
+        this.more = ko.observable('More');
     };
 });

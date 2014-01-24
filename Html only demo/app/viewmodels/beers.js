@@ -26,7 +26,13 @@ define(['knockout', 'models/beerRepository', 'jquery', 'viewmodels/beer-summary'
             self.newBeerBrewery('');
         };
 
-        self.glowGreen = function (element, index, data) {
+        // Technically, glowGreen now has a dependency on the DOM (because it receives an element).
+        // If you want to avoid this, you might be able to work around it by 
+        //  - creating a custom binding
+        //  - let this binding listen to events from your viewmodel
+        //  - let your viewmodel raise an event (work with callbacks) when it is added to the DOM
+        //  - bind your li like so: <li data-bind="glowGreenOn: addToDom"></li>
+        self.fadeIn = function (element, index, data) {
             // afterAdd is called for each node that KO finds in the template. Whitespaces (text) included.
             if (!element.tagName) {
                 return;

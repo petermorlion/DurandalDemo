@@ -7,7 +7,8 @@
         'knockout': '../lib/knockout/knockout-2.3.0',
         'bootstrap': '../lib/bootstrap/js/bootstrap',
         'jquery': '../lib/jquery/jquery-1.9.1',
-        'models': './models'
+        'models': './models',
+        'customBindings' : './customBindings'
     },
     shim: {
         'bootstrap': {
