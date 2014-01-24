@@ -2,11 +2,18 @@
     ko.bindingHandlers.rating = {
         init: function (element, valueAccessor, allBindingAccessor, viewModel) {
             var element = $(element);
+            var currentScore = ko.utils.unwrapObservable(valueAccessor());
 
             var stars = [];
 
             for (var i = 1; i <= 5; i++) {
-                var star = $('<span></span>').addClass('icon-star-empty').data('score', i);
+                var star = $('<span></span>').data('score', i);
+                if (i <= currentScore) {
+                    star.addClass('icon-star');
+                } else {
+                    star.addClass('icon-star-empty');
+                }
+
                 stars.push(star);
 
                 // we just created an array of stars and added it to the DOM
