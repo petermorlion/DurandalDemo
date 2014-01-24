@@ -10,6 +10,9 @@ define(['knockout', 'models/beer', 'plugins/router', 'models/beerRepository', 'c
             beer.rating = this.rating();
             beerRepository.save(beer);
             router.navigate('#beers');
+        },
+        this.clearRating = function () {
+            this.rating(0);
         }
     }
 });
