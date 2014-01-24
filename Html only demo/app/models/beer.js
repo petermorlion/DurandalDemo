@@ -4,5 +4,6 @@ define([], function () {
         this.name = name;
         this.brewery = brewery;
         this.comments = comments;
+        this.rating = 0;
     };
 });
