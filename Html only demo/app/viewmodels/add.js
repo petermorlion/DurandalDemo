@@ -1,4 +1,5 @@
-define(['knockout', 'models/beer', 'plugins/router', 'models/beerRepository', 'customBindings/rating'], function (ko, Beer, router, beerRepository, ratin) {
+// rating is added as a dependency so it is added on the page; there might be better ways to do this
+define(['knockout', 'models/beer', 'plugins/router', 'models/beerRepository', 'customBindings/rating'], function (ko, Beer, router, beerRepository, rating) {
     return function AddViewModel() {
         this.displayName = 'Add Beer';
         this.name = ko.observable(''),

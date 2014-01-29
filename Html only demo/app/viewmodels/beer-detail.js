@@ -1,4 +1,4 @@
-﻿define(['models/beerRepository', 'plugins/router', 'knockout'], function (beerRepository, router, ko) {
+﻿define(['durandal/app', 'models/beerRepository', 'plugins/router', 'knockout'], function (app, beerRepository, router, ko) {
     // this returns a singleton, so the viewmodel stays in memory
     // because we use the activate method every time the view is activated (because we need the parameter from the url), 
     // the data will be updated every time the view is activated, giving us the correct data.
@@ -20,8 +20,13 @@
             }
         },
         remove: function () {
-            beerRepository.delete(this.beerId());
-            router.navigate('#beers');
+            var that = this;
+            app.showMessage('Are you sure you wan to delete this beer?', 'Delete', ['Yes', 'No']).then(function (dialogResult) {
+                if (dialogResult === 'Yes') {
+                    beerRepository.delete(that.beerId());
+                    router.navigate('#beers');
+                }
+            });
         }
     };
 });
