@@ -19,22 +19,24 @@
                 // we just created an array of stars and added it to the DOM
                 element.append(star);
 
-                // when clicked we loop over our stars and set the correct classes
-                star.click(function () {
-                    var score = $(this).data('score');
-                    for (var i = 0; i < stars.length; i++) {
-                        var item = stars[i];
-                        if (item.data('score') <= score) {
-                            stars[i].addClass('icon-star').removeClass('icon-star-empty');
-                        } else {
-                            stars[i].addClass('icon-star-empty').removeClass('icon-star');
+                // when clicked we loop over our stars and set the correct classes, but only if enabled
+                if (allBindingAccessor().enable !== false) {
+                    star.click(function () {
+                        var score = $(this).data('score');
+                        for (var i = 0; i < stars.length; i++) {
+                            var item = stars[i];
+                            if (item.data('score') <= score) {
+                                stars[i].addClass('icon-star').removeClass('icon-star-empty');
+                            } else {
+                                stars[i].addClass('icon-star-empty').removeClass('icon-star');
+                            }
                         }
-                    }
 
-                    // don't forget to set the score
-                    var observable = valueAccessor();
-                    observable(score);
-                });
+                        // don't forget to set the score
+                        var observable = valueAccessor();
+                        observable(score);
+                    });
+                }
             }
         },
 
