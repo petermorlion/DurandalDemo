@@ -10,9 +10,12 @@
                 { route: 'beers', title: 'Beers', moduleId: 'viewmodels/beers', nav: true },
                 { route: 'settings', title: 'Settings', moduleId: 'viewmodels/settings', nav: true },
                 { route: 'add', moduleId: 'viewmodels/add', nav: false },
-                { route: 'beer/:id', moduleId: 'viewmodels/beer-detail', nav: false }
+                { route: 'beer/:id', moduleId: 'viewmodels/beer-detail', nav: false },
+                { route: 'not-found', moduleId: 'viewmodels/not-found', nav: false }
             ]).buildNavigationModel();
             
+            router.mapUnknownRoutes('viewmodels/not-found');
+
             return router.activate();
         }
     };
