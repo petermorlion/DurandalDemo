@@ -1,0 +1,21 @@
+<section>
+    <h2 data-bind="html: displayName"></h2>
+    <div>
+        Name:
+        <input data-bind="value: name" />
+    </div>
+    <div>
+        Brewery:
+        <input data-bind="value: brewery" />
+    </div>
+    <div>
+        Rating:
+        <span data-bind="rating: rating" />
+        (<span data-bind="text: rating"></span>) <button data-bind="click: clearRating">Clear</button>
+    </div>
+    <div>
+        Comments:
+        <textarea data-bind="value: comments"></textarea>
+    </div>
+    <input type="button" data-bind="click: save" value="Save" />
+</section>

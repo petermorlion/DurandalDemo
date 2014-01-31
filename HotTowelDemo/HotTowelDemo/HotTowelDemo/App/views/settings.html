@@ -1,0 +1,11 @@
+﻿<section>
+    <h2 data-bind="text: displayName"></h2>
+    <div data-bind="collapsibleSection: 'Personal'">
+        <div>Name:</div>
+        <div><input data-bind="value: name" /></div>
+    </div>
+    <div data-bind="collapsibleSection: more">
+        More settings coming soon!
+    </div>
+    <input type="button" data-bind="click: save" value="Save" />
+</section>

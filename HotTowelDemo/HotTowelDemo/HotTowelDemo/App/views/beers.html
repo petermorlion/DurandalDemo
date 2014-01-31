@@ -1,0 +1,18 @@
+<section>
+    <h2 data-bind="html: displayName"></h2>
+    <a href="#add">Add new beer</a>
+    <div class="quick-add">
+        Quick add: 
+        Name: <input data-bind="value: newBeerName" />
+        Brewery: <input data-bind="value: newBeerBrewery" />
+        <button data-bind="click: quickAdd">Add quickly!</button>
+    </div>
+    <div></div>
+    <div class="row-fluid">
+        <ul class="thumbnails" data-bind="foreach: { data: items, afterAdd: fadeIn }">
+            <li>
+                <div data-bind="compose: 'beer-summary.html'"></div> <!-- binds the current context to the beer.html view -->
+            </li>
+        </ul>
+    </div>
+</section>

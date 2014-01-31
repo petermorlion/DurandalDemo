@@ -29,6 +29,7 @@ namespace HotTowelDemo
                 .Include("~/Content/durandal.css")
                 .Include("~/Content/toastr.css")
                 .Include("~/Content/app.css")
+                .Include("~/Content/main.css")
               );
         }
 

@@ -4,7 +4,9 @@ require.config({
         'text': '../Scripts/text',
         'durandal': '../Scripts/durandal',
         'plugins': '../Scripts/durandal/plugins',
-        'transitions': '../Scripts/durandal/transitions'
+        'transitions': '../Scripts/durandal/transitions',
+        'models': './models',
+        'customBindings' : './customBindings'
     }
 });
 
@@ -22,10 +24,11 @@ function boot (app, viewLocator, system, router, logger) {
     // Enable debug message to show in the console 
     system.debug(true);
 
-    app.title = 'My App';
+    app.title = 'T4T Beer';
 
     app.configurePlugins({
-        router: true
+        router: true,
+        dialog: true
     });
     
     app.start().then(function () {

@@ -1,0 +1,36 @@
+.beer-summary {
+    display: block;
+    border: 2px solid #808080;
+    border-radius: 10px;
+    -webkit-box-shadow: 5px 5px 3px rgba(0, 0, 0, 0.1);
+       -moz-box-shadow: 5px 5px 3px rgba(0, 0, 0, 0.1);
+            box-shadow: 5px 5px 3px rgba(0, 0, 0, 0.1);
+    width:  200px;
+    height: 150px;
+    padding:  5px;
+    color: grey;
+}
+
+.beer-summary:hover {
+    text-decoration: none;
+    color: grey;
+}
+
+.beer-delete {
+    color: #BB3333;
+    display: inline-block;
+}
+
+.beer-delete:hover {
+    color: #FF2222;
+    cursor: pointer;
+}
+
+.quick-add {
+    border: 1px solid #808080;
+    -webkit-border-radius: 5px;
+       -moz-border-radius: 5px;
+            border-radius: 5px;
+    margin-bottom: 10px;
+    padding: 5px;
+}

@@ -1,3 +1,14 @@
 ﻿<section>
-    <h2 class="page-title" data-bind="text: title"></h2>
+    <h2 data-bind="text: displayName"></h2>
+    <div>
+        Hi <span data-bind="if: isProfileComplete, text: name"></span> and welcome to the Team4Talent Beer o'clock Durandal demo app!
+    </div>
+    <div data-bind="visible: !isProfileComplete()">
+        Your profile seems incomplete. How about you <a href="#settings">tell us more about yourself</a>?
+    </div>
+    <h3 data-bind="click: refreshRandomBeer">Random beer</h3>
+    <div data-bind="visible: !hasRandomBeer()">
+        Oops! We'd like to display one of your beers here, but it looks like you haven't added any yet. Go ahead and <a href="#add">add a beer</a>!
+    </div>
+    <div data-bind="compose: randomBeer()"></div>
 </section>
