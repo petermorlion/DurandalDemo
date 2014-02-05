@@ -1,0 +1,27 @@
+﻿<section>
+    <h2 data-bind="text: displayName"></h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Feature</th>
+                <th>Free</th>
+                <th>Pro</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- ko foreach: features -->
+            <tr>
+                <td data-bind="text: name"></td>
+                <td><input type="checkbox" data-bind="checked: free, enable: false" /></td>
+                <td><input type="checkbox" data-bind="checked: pro, enable: false" /></td>
+            </tr>
+            <!-- /ko -->
+            <tr>
+                <td></td>
+                <td>Free!</td>
+                <td>Muchos dineros</td>
+            </tr>
+        </tbody>
+        <!-- better would be to use the tfoot tag for this, but I couldn't think of a better example -->
+    </table>
+</section>

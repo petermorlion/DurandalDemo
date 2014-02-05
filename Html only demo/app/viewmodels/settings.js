@@ -9,15 +9,15 @@
         }
 
         this.displayName = "Settings";
-        
-        this.save = function () {
+
+        this.save = function() {
             if (localStorage) {
                 localStorage.profile = JSON.stringify({ name: self.name() });
                 app.showMessage('Settings were saved!', 'Saved');
             } else {
                 app.showMessage('Your browser doesn\'t seem to support saving locally. Update your browser for more fun.');
             }
-        }
+        };
 
         this.more = ko.observable('More');
     };

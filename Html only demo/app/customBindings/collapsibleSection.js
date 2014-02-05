@@ -5,12 +5,12 @@
             // Called when first applied to the element. Set up initial state, event handlers,...
             var value = valueAccessor();
             var valueUnwrapped = ko.utils.unwrapObservable(value);
-            var element = $(element);
-            var header = $('<h3></h3>').text(valueUnwrapped);
+            element = $(element);
+            var header = $('<h3></h3>').text(valueUnwrapped).css({ 'cursor' : 'pointer' });
 
             header.insertBefore(element);
             header.click(function () {
-                element.toggle();
+                element.toggle('fast');
             });
         },
 

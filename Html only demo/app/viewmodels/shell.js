@@ -8,6 +8,7 @@
             router.map([
                 { route: '', title: 'Home', moduleId: 'viewmodels/home', nav: true },
                 { route: 'beers', title: 'Beers', moduleId: 'viewmodels/beers', nav: true },
+                { route: 'features', title: 'Features', moduleId: 'viewmodels/features', nav: true },
                 { route: 'settings', title: 'Settings', moduleId: 'viewmodels/settings', nav: true },
                 { route: 'add', moduleId: 'viewmodels/add', nav: false },
                 { route: 'beer/:id', moduleId: 'viewmodels/beer-detail', nav: false },
