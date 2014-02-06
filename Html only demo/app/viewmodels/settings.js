@@ -2,15 +2,19 @@
     return function settingsViewModel() {
         var self = this;
 
-        this.name = ko.observable('');
+        self.name = ko.observable('');
+
+        self.name.subscribe(function(newValue) {
+            console.log('Changed name to ' + newValue);
+        });
 
         if (localStorage && localStorage.profile) {
             this.name(JSON.parse(localStorage.profile).name);
         }
 
-        this.displayName = "Settings";
+        self.displayName = "Settings";
 
-        this.save = function() {
+        self.save = function() {
             if (localStorage) {
                 localStorage.profile = JSON.stringify({ name: self.name() });
                 app.showMessage('Settings were saved!', 'Saved');
@@ -19,6 +23,6 @@
             }
         };
 
-        this.more = ko.observable('More');
+        self.more = ko.observable('More');
     };
 });
