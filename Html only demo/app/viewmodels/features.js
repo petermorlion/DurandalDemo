@@ -1,5 +1,5 @@
 ﻿define(['durandal/app', 'plugins/router', 'knockout', 'customBindings/collapsibleSection'], function (app, router, ko) {
-    return function settingsViewModel() {
+    return function SettingsViewModel() {
         var self = this;
 
         self.displayName = "Features";
@@ -10,6 +10,6 @@
             { name: 'Twitter integration', free: true, pro: true },
             { name: 'Untappd integration', free: false, pro: true },
             { name: 'Ratebeer integration', free: false, pro: true }
-        ]
+        ];
     };
 });

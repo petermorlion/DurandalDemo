@@ -21,7 +21,7 @@
         },
         remove: function () {
             var that = this;
-            app.showMessage('Are you sure you wan to delete this beer?', 'Delete', ['Yes', 'No']).then(function (dialogResult) {
+            app.showMessage('Are you sure you want to delete this beer?', 'Delete', ['Yes', 'No']).then(function (dialogResult) {
                 if (dialogResult === 'Yes') {
                     beerRepository.delete(that.beerId());
                     router.navigate('#beers');

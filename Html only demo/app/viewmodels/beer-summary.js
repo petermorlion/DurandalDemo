@@ -1,6 +1,6 @@
 // rating is added as a dependency so it is added on the page; there might be better ways to do this
-define(['models/beerRepository', 'customBindings/rating'], function (beerRepository) {
-    return function beerSummaryViewModel(beer) {
+define(['models/beerRepository', 'customBindings/rating', 'knockout'], function (beerRepository, r, ko) {
+    return function BeerSummaryViewModel(beer) {
         var self = this;
 
         self.beerId = beer.beerId;

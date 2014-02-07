@@ -1,7 +1,7 @@
 ﻿define(['knockout', 'jquery'], function (ko, $) {
     ko.bindingHandlers.rating = {
         init: function (element, valueAccessor, allBindingAccessor, viewModel) {
-            var element = $(element);
+            element = $(element);
             var currentScore = ko.utils.unwrapObservable(valueAccessor());
 
             var stars = [];
@@ -32,7 +32,7 @@
                             }
                         }
 
-                        // don't forget to set the score
+                        // don't forget to set the score (DOM -> viewmodel)
                         var observable = valueAccessor();
                         observable(score);
                     });
@@ -41,8 +41,8 @@
         },
 
         update: function (element, valueAccessor, allBindingAccessor, viewModel) {
-            var element = $(element);
-            var stars = element.find('span.icon-star, span.icon-sar-empty');
+            element = $(element);
+            var stars = element.find('span.icon-star, span.icon-star-empty');
             var value = valueAccessor();
             var score = ko.utils.unwrapObservable(value);
 

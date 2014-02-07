@@ -14,7 +14,7 @@
         'bootstrap': {
             deps: ['jquery'],
             exports: 'jQuery'
-       }
+        }
     }
 });
 

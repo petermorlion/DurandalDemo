@@ -1,0 +1,3 @@
+Knockout CSS:
+
+<div class="beer-summary" data-bind="css: { unrated: rating === undefined || rating === 0, 'top-rated': rating != undefined &&  rating === 5 }">

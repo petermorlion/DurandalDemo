@@ -2,8 +2,8 @@ define(['knockout', 'models/beerRepository', 'jquery', 'viewmodels/beer-summary'
     return function beersViewModel() {
         var self = this;
         self.displayName = 'Beers';
-        
-        self.getBeers = function () {
+
+        self.getBeers = function() {
             var existingBeers = beerRepository.find();
 
             var result = [];
@@ -11,14 +11,14 @@ define(['knockout', 'models/beerRepository', 'jquery', 'viewmodels/beer-summary'
                 result.push(new BeerSummary(existingBeers[i]));
             }
 
-            return existingBeers;
+            return result;
         };
 
         self.items = ko.observableArray(self.getBeers());
 
         self.newBeerName = ko.observable('');
         self.newBeerBrewery = ko.observable('');
-        self.quickAdd = function () {
+        self.quickAdd = function() {
             var beer = new Beer(self.newBeerName(), self.newBeerBrewery(), '');
             beerRepository.save(beer);
             self.items.push(new BeerSummary(beer));
@@ -32,7 +32,7 @@ define(['knockout', 'models/beerRepository', 'jquery', 'viewmodels/beer-summary'
         //  - let this binding listen to events from your viewmodel
         //  - let your viewmodel raise an event (work with callbacks) when it is added to the DOM
         //  - bind your li like so: <li data-bind="glowGreenOn: addToDom"></li>
-        self.fadeIn = function (element, index, data) {
+        self.fadeIn = function(element, index, data) {
             // afterAdd is called for each node that KO finds in the template. Whitespaces (text) included.
             if (!element.tagName) {
                 return;
@@ -42,5 +42,5 @@ define(['knockout', 'models/beerRepository', 'jquery', 'viewmodels/beer-summary'
                 .hide() // hide first so jQuery can fadeIn
                 .fadeIn();
         };
-    }
+    };
 });

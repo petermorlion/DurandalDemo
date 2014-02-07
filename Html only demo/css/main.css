@@ -34,3 +34,11 @@
     margin-bottom: 10px;
     padding: 5px;
 }
+
+.unrated {
+    background-color: #CCC;
+}
+
+.top-rated {
+    background-color: #adff2f;
+}
