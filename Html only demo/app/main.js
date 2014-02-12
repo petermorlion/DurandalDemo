@@ -1,4 +1,5 @@
 ﻿requirejs.config({
+    urlArgs: 'bust=' + (new Date()).getTime(),
     paths: {
         'text': '../lib/require/text',
         'durandal':'../lib/durandal/js',

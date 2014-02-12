@@ -42,3 +42,7 @@
 .top-rated {
     background-color: #adff2f;
 }
+
+.invalid-input {
+    border: 1px solid red;
+}

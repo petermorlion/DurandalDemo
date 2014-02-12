@@ -1,3 +1,14 @@
 Knockout CSS:
 
+Static, add in beer-summary.html
+
 <div class="beer-summary" data-bind="css: { unrated: rating === undefined || rating === 0, 'top-rated': rating != undefined &&  rating === 5 }">
+
+Dynamic, add in add.html (key is string because it's an invalid JS variable name
+
+, css: { 'invalid-input': name() === '' }
+
+RequireJS require:
+
+var router = require('plugins/router');
+router.navigate('#beers');
